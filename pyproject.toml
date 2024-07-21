@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cnn_vis"]
+
+[project]
+name = "cnn-vis"
+version = "2024.7.20"
+dependencies = [
+    "torch",
+    "torchvision",
+]
+requires-python = ">= 3.8, <=3.11"
+authors = [{ name = "David Carlyn", email = "davidecarlyn@gmail.com" }]
+readme = "README.md"
+description = "Visualization tools for cnns."
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+]
+
+[project.scripts]
+vis-test = "cnn_vis.sample:run"
+train-model = "cnn_vis.train:train_model"
+#run-gup-bot = "gg.main:run_bot"
+
+[project.urls]
+Repository = "https://github.com/DavidCarlyn/cnn_vis"
